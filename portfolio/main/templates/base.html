@@ -11,23 +11,38 @@
     {% endblock extrahead %}
 </head>
 <body class="bg-gray-100 text-gray-900">
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-4 py-4">
-            <nav class="flex justify-center">
-                <ul class="flex space-x-4">
-                    <li><a href="/home" class="text-blue-600 hover:text-blue-800">Home</a></li>
-                    <li><a href="/contact" class="text-blue-600 hover:text-blue-800">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header class="bg-white shadow-md">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4">
+    <!-- Logo Placeholder -->
+    <div class="flex items-center">
+      <a href="/" class="flex items-center text-xl font-semibold text-gray-900">
+        <!-- Logo can be an image or a text logo -->
+<!--        <img src="{% static 'images/logo.png' %}" alt="Logo" class="h-8 w-8 mr-2">-->
+        <!-- Fallback text logo -->
+        <span>Arth I Jani</span>
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="flex">
+      <ul class="flex space-x-8">
+        <li>
+          <a href="/home" class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out px-4 py-2 rounded-md font-medium">Home</a>
+        </li>
+        <li>
+          <a href="/contact" class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out px-4 py-2 rounded-md font-medium">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
     <main class="container mx-auto px-4 py-6">
         {% block content %}
         {% endblock content %}
     </main>
     <footer class="text-black-600 body-font" style="background-color:white">
   <div class="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
-    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+    <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
       <span class="ml-3 text-xl">Arth I Jani</span>
     </a>
 
