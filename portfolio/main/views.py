@@ -11,6 +11,12 @@ def home(request):
 def contact(request):
     return render(request, "contact.html")
 
+def resume(request):
+    return render(request, "resume.html")
+
+def blogs(request):
+    return render(request, "blogs.html")
+
 
 def project(request, id):
     project = get_object_or_404(Project, pk=id)
