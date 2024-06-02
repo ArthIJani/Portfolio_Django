@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, Tag
+from .models import Project, Tag, BlogPost, Category
 
 
 def home(request):
@@ -15,7 +15,13 @@ def resume(request):
     return render(request, "resume.html")
 
 def blogs(request):
-    return render(request, "blogs.html")
+    blogs = BlogPost.objects.all()
+    category = Category.objects.all()
+    return render(request, "blogs.html", {"blogs": blogs, "category": category})
+
+def blog_detail(request, id):
+    blog_detail = get_object_or_404(BlogPost, pk=id)
+    return render(request, 'blog_detail.html', {"blog":blog_detail})
 
 
 def project(request, id):
