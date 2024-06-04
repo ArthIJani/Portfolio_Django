@@ -60,7 +60,7 @@
     {% for project in projects %}
       <div class="project bg-white p-4 rounded shadow" data-name="{{ project.title|lower }}" data-tags="{{ project.tags.all|join:', '|lower }}">
         <h2 class="text-xl font-bold mb-2"><a href="{% url 'project' project.id %}" class="text-blue-600 hover:text-blue-800">{{ project.title }}</a></h2>
-        <p class="mb-2">{{ project.description }}</p>
+        <p class="mb-2">{{ project.description | slice:"0:100"}}...</p>
         <p class="text-gray-600">Tags: {{ project.tags.all|join:', ' }}</p>
       </div>
     {% endfor %}
